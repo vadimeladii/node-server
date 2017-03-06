@@ -20,7 +20,7 @@ var UserRepository = {
     },
     add: function (req, callback) {
         user = new userModel({
-            id: req.body.id,
+            id: req.body.id ? req.body.id : 1,
             username: req.body.username
         });
         user.save(function (err) {

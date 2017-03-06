@@ -3,9 +3,12 @@ var bodyParser = require('body-parser');
 var util = require('./config/const');
 var port = process.env.PORT || util.PORT;
 var userRepository = require("./repository/userRepository");
+const cors = require('cors');
 
 require('./config/db');
 app.use(bodyParser.json());
+app.use(cors());
+
 
 //user
 app.get('/users', function (req, res) {
